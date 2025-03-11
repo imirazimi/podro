@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    container_name: podro-postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_DB: podro
+      POSTGRES_USER: podro
+      POSTGRES_PASSWORD: p1d2r3o4
+
+volumes:
+  postgres-data:

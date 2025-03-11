@@ -1,0 +1,28 @@
+---
+type: yml
+
+
+http_server:
+  port: 8585
+
+postgres:
+  port: 5432
+  host: localhost
+  db: podro
+  user: podro
+  password: p1d2r3o4
+  max_connection_lifetime: 3
+  max_open_connections: 10
+  max_idle_connections: 10
+
+logger:
+  directory: logs
+  file_name: log.json
+  use_local_time: true
+  file_max_size_in_mb: 20
+  file_max_age_in_days: 7
+
+migrator:
+  podro : podroapp/migrate
+  migration_db: gorp_migrations
+  dialect: postgres
